@@ -1,31 +1,31 @@
 // Определяем путь к корню в зависимости от глубины папки
 function getRootPath() {
     const currentPath = window.location.pathname;
-    const pathParts = currentPath.split('/').filter(part => part !== '' && part !== 'index.html');
+    const pathParts = currentPath.split("/").filter(part => part !== "" && part !== "index.html");
 
     // Если файл в корне (например, /index.html или /), возвращаем ./
     if (pathParts.length === 0) {
-        return './';
+        return "./";
     }
 
     // Если файл в подпапке, считаем кол-во уровней вверх
     let depth = pathParts.length - 1;
-    return depth > 0 ? '../'.repeat(depth) : './';
+    return depth > 0 ? "../".repeat(depth) : "./";
 }
 
 const rootPath = getRootPath();
 
 // Функция для перехода на главную
 function goToHome() {
-    window.location.href = rootPath + 'index.html';
+    window.location.href = rootPath + "index.html";
 }
 
 // Загружаем навигацию
-document.getElementById('navbar-container').innerHTML = `
+document.getElementById("navbar-container").innerHTML = `
     <nav class="navbar">
         <a href="javascript:void(0);" onclick="goToHome()" class="navbar-left">
             <div class="logo">
-                <img src="${rootPath}logo.png" alt="NEO Organization Logo">
+                <img src="Programs/Crowbar/img/NEO_Organization.jpg" alt="NEO Organization Logo">
             </div>
             <div class="org-name">NEO Organization</div>
         </a>
@@ -40,7 +40,7 @@ document.getElementById('navbar-container').innerHTML = `
 `;
 
 // Загружаем футер
-document.getElementById('footer-container').innerHTML = `
+document.getElementById("footer-container").innerHTML = `
     <footer class="footer">
         <div class="footer-content">
             <div class="copyleft">
@@ -49,7 +49,8 @@ document.getElementById('footer-container').innerHTML = `
             <div class="social-links">
                 <a href="https://github.com/AnonimNEO" title="GitHub" target="_blank">🄯</a>
                 <a href="https://t.me/Links_NEO_Organization" title="Telegram" target="_blank">TG️</a>
-                <a href="mailto:operawifi.mini.net.win.2000@gmail.com" title="Email">✉️</a>
+                <a href="https://www.youtube.com/channel/UCZvOEU_IDRsfK5j-JoNAVWg" title="Youtube Departament K" target="_blank">Y</a>
+                <a href="mailto:operawifi.mini.net.win.2000@gmail.com" title="Email">📧</a>
             </div>
         </div>
     </footer>
