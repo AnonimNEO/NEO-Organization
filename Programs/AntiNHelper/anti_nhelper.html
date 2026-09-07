@@ -15,45 +15,84 @@
             <!--Фон-->
             <img src="anti_nhelper_foreground.png" alt="Foreground" class="foreground">
             <div class="info-section">
-                <h1 class="header-text">AntiNHelper</h1>
+                <h1 class="header-text">AntiNHelper v0.3.7 Beta</h1>
                 <div class="info-text">Данный проект создан исключительно в демонстрационных целях, а именно для показа масштаба проблемы в защите программы NHelper.</div>
-                <div class="info-text">На данный момент в данном проекте используется одна уязвимость "имя процесса в каталоге %Temp%\.net", подробнее можете узнать в репозитории на GitHub по кнопке ниже.</div>
-                <div class="info-text">Все проблемы в программе NHelper:</div>
+                <div class="info-text">На данный момент в данном проекте уже 3 серьёзные уязвимости, подробнее можете узнать в репозитории на GitHub по кнопке ниже.</div>
+                <h2 class="header-text">Уязвимости NHelper:</h2>
                 <table border="1" width="100%">
                 <thead>
-                <tr>
-                <th>№</th>
-                <th>Название уязвимости</th>
-                <th>Причина</th>
-                </tr>
+                    <tr>
+                    <th>№</th>
+                    <th>Название уязвимости</th>
+                    <th>Причина</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr>
-                <td>0</td>
-                <td>Закрытый исходный код</td>
-                <td>Разработчик боится своего говнокода</td>
-                </tr>
+                    <tr>
+                    <td>0</td>
+                    <td>Имя процесса в каталоге %Temp%\.net</td>
+                    <td>Использование .NET Fraemwork (возможно .NET Core)</td>
+                    </tr>
                 </tbody>
                 <tbody>
-                <tr>
-                <td>1</td>
-                <td>Имя процесса в каталоге %Temp%\.net</td>
-                <td>Использование .NET Fraemwork</td>
-                </tr>
+                    <tr>
+                    <td>1</td>
+                    <td>Параметр EnableBlockSearch в реестре</td>
+                    <td>Защита для своих вирусов.</td>
+                    </tr>
                 </tbody>
                 <tbody>
-                <tr>
-                <td>2</td>
-                <td>Утечка памяти при обновлении интерфейса</td>
-                <td>говнокод и чрезмерное использование нейросетей</td>
-                </tr>
+                    <tr>
+                    <td>2</td>
+                    <td>user.config в %localappdata%\NHelperV4</td>
+                    <td>Не понимаю зачем этот файл</td>
+                    </tr>
+                </tbody>
+                </table>
+                <h2 class="header-text">Другие проблемы программы NHelper</h2>
+                <table border="1" width="100%">
+                <thead>
+                    <tr>
+                    <th>№</th>
+                    <th>Проблема</th>
+                    <th>Возможная причина</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>0</td>
+                    <td>Закрытый исходный код</td>
+                    <td>Разработчик боится своего говнокода</td>
+                    </tr>
                 </tbody>
                 <tbody>
-                <tr>
-                <td>3</td>
-                <td>Долгая прогрузка интерфейса на слабых ПК</td>
-                <td>Использование тяжёлого графического интерфейса</td>
-                </tr>
+                    <tr>
+                    <td>1</td>
+                    <td>Утечка памяти при обновлении интерфейса</td>
+                    <td>говнокод и чрезмерное использование нейросетей</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                    <td>2</td>
+                    <td>Долгая прогрузка интерфейса на слабых ПК</td>
+                    <td>Использование тяжёлого графического интерфейса</td>
+                    </tr>
+                </tbody>
+                </table>
+                <h2 class="header-text">Особые благодарности</h2>
+                <table border="1" width="100%">
+                <thead>
+                    <tr>
+                    <th>Имя или Никнейм</th>
+                    <th>Вклад в проект</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>KOSMOS0ft</td>
+                    <td>Обнаружил уязвимость "Параметр EnableBlockSearch" и "повреждение user.config"</td>
+                    </tr>
                 </tbody>
                 </table>
                 <a href="https://github.com/AnonimNEO/Anti_NHelper" target="_blank" class="download-btn">GitHub - Исходный код AntiNHelper</a>
