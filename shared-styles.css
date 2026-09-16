@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: "NimbusMonoPS-Regular.otf", cursive, sans-serif;
+    font-family: "NimbusMonoPS", serif;
     font-size: 18px;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -103,15 +103,21 @@ body.dark-theme .navbar {
     font-weight: bold;
 }
 
+@font-face {
+    font-family: "NimbusMonoPS";
+    src: url("NimbusMonoPS-Regular.otf") format("opentype");
+}
+
 .theme-btn {
     padding: 8px 16px;
     border: 2px solid;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    font-family: "NimbusMonoPS-Regular.otf", cursive, sans-serif;
+    font-family: "NimbusMonoPS", serif;
     transition: all 0.3s;
 }
+
 
 body.light-theme .theme-btn {
     border-color: #000;
