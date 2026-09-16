@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: "Nimbus Mono PS", cursive, sans-serif;
+    font-family: "NimbusMonoPS-Regular.otf", cursive, sans-serif;
     font-size: 18px;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -109,7 +109,7 @@ body.dark-theme .navbar {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    font-family: "Nimbus Mono PS", cursive, sans-serif;
+    font-family: "NimbusMonoPS-Regular.otf", cursive, sans-serif;
     transition: all 0.3s;
 }
 
