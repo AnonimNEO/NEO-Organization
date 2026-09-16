@@ -1,45 +1,25 @@
-// Определяем путь к корню в зависимости от глубины папки
-function getRootPath() {
-    const currentPath = window.location.pathname;
-    const pathParts = currentPath.split("/").filter(part => part !== "" && part !== "index.html");
-
-    // Если файл в корне (например, /index.html или /), возвращаем ./
-    if (pathParts.length === 0) {
-        return "./";
-    }
-
-    // Если файл в подпапке, считаем кол-во уровней вверх
-    let depth = pathParts.length - 1;
-    return depth > 0 ? "../".repeat(depth) : "./";
+// Функция для загрузки навигации с параметрами
+function loadNavbar(logoPath, indexPath) {
+    document.getElementById("navbar-container").innerHTML = `
+        <nav class="navbar">
+            <a href="${indexPath}" class="navbar-left">
+                <div class="logo">
+                    <img src="${logoPath}" alt="NEO Organization Logo">
+                </div>
+                <div class="org-name">NEO Organization</div>
+            </a>
+            <div class="navbar-right">
+                <div class="theme-toggle">
+                    <span>Изменить тему:</span>
+                    <button class="theme-btn active" id="light-theme-btn" onclick="setTheme('light')">☀️ Светлая</button>
+                    <button class="theme-btn" id="dark-theme-btn" onclick="setTheme('dark')">🌙 Тёмная</button>
+                </div>
+            </div>
+        </nav>
+    `;
 }
 
-const rootPath = getRootPath();
-
-// Функция для перехода на главную
-function goToHome() {
-    window.location.href = rootPath + "index.html";
-}
-
-// Загружаем навигацию
-document.getElementById("navbar-container").innerHTML = `
-    <nav class="navbar">
-        <a href="javascript:void(0);" onclick="goToHome()" class="navbar-left">
-            <div class="logo">
-                <img src="Programs/Crowbar/img/NEO_Organization.jpg" alt="NEO Organization Logo">
-            </div>
-            <div class="org-name">NEO Organization</div>
-        </a>
-        <div class="navbar-right">
-            <div class="theme-toggle">
-                <span>Изменить тему:</span>
-                <button class="theme-btn active" id="light-theme-btn" onclick="setTheme('light')">☀️ Светлая</button>
-                <button class="theme-btn" id="dark-theme-btn" onclick="setTheme('dark')">🌙 Тёмная</button>
-            </div>
-        </div>
-    </nav>
-`;
-
-// Загружаем футер
+// Загружаем нижний колонтитул
 document.getElementById("footer-container").innerHTML = `
     <footer class="footer">
         <div class="footer-content">
@@ -76,9 +56,3 @@ function setTheme(theme) {
 
     localStorage.setItem("theme", theme);
 }
-
-// Проверка сохранённой темы при загрузке страницы
-window.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = localStorage.getItem("theme") || "light";
-    setTheme(savedTheme);
-});
