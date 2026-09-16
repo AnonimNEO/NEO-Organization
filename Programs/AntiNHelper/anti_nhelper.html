@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="color-scheme" content="light dark">
         <title>Anti NHelper</title>
         <link rel="icon" type="anti_nhelper_logo.png" href="anti_nhelper_logo.png">
         <link rel="stylesheet" href="../../shared-styles.css">
@@ -19,7 +20,7 @@
                 <div class="info-text">Данный проект создан исключительно в демонстрационных целях, а именно для показа масштаба проблемы в защите программы NHelper.</div>
                 <div class="info-text">На данный момент в данном проекте уже 3 серьёзные уязвимости, подробнее можете узнать в репозитории на GitHub по кнопке ниже.</div>
                 <h2 class="header-text">Уязвимости NHelper:</h2>
-                <table border="1" width="100%">
+                <table class="comparison-table">
                 <thead>
                     <tr>
                     <th>№</th>
@@ -50,7 +51,7 @@
                 </tbody>
                 </table>
                 <h2 class="header-text">Другие проблемы программы NHelper</h2>
-                <table border="1" width="100%">
+                <table class="comparison-table">
                 <thead>
                     <tr>
                     <th>№</th>
@@ -81,7 +82,7 @@
                 </tbody>
                 </table>
                 <h2 class="header-text">Особые благодарности</h2>
-                <table border="1" width="100%">
+                <table class="comparison-table">
                 <thead>
                     <tr>
                     <th>Имя или Никнейм</th>
@@ -100,15 +101,7 @@
         </div>
 
         <div id="footer-container"></div>
-        <nav class="navbar">
-            <a href="../../index.html" class="navbar-left">
-                <div class="logo">
-                    <img src="../../Programs/Crowbar/img/NEO_Organization.jpg" alt="NEO Organization Logo">
-                </div>
-                <div class="org-name">NEO Organization</div>
-            </a>
-        </nav>
-
-        <script src="../../shared-components.js"></script>
+    <script src="../../shared-components.js"></script>
+    <script>loadNavbar("../Crowbar/img/NEO_Organization.jpg", "../../index.html");</script>
     </body>
 </html>
