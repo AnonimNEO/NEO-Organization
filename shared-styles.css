@@ -8,6 +8,7 @@ body {
     font-family: "NimbusMonoPS", serif;
     font-size: 18px;
     transition: background-color 0.3s, color 0.3s;
+    overflow-x: hidden;
 }
 
 body.dark-theme {
@@ -38,7 +39,7 @@ body.light-theme {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
+    width: 100vw;
     height: 80px;
     display: flex;
     align-items: center;
