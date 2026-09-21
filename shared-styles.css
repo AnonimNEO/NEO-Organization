@@ -29,9 +29,9 @@ body.light-theme {
 }
 
 .container {
-    width: 100%;
-    padding: 0;
-    margin: 0;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
 }
 
 .navbar {
@@ -411,7 +411,11 @@ table td, table th {
     }
 
     .container {
-        margin-top: 160px;
+        margin-top: 200px;
+    }
+
+    .container::before {
+        top: 200px;
     }
 }
 
@@ -432,5 +436,13 @@ table td, table th {
     .theme-btn {
         padding: 6px 12px;
         font-size: 14px;
+    }
+
+    .container {
+        margin-top: 230px;
+    }
+
+    .container::before {
+        top: 230px;
     }
 }
