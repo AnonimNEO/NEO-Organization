@@ -10,7 +10,7 @@ function loadNavbar(logoPath, indexPath) {
             </a>
             <div class="navbar-right">
                 <div class="theme-toggle">
-                    <span>Изменить тему:</span>
+                    <span>Тема:</span>
                     <button class="theme-btn active" id="light-theme-btn" onclick="setTheme('light')">☀️</button>
                     <button class="theme-btn" id="dark-theme-btn" onclick="setTheme('dark')">🌙</button>
                 </div>
