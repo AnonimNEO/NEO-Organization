@@ -217,7 +217,13 @@ body.dark-theme .footer {
     color: inherit;
 }
 
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
 .download-btn {
+    flex: 1;
     display: block;
     width: 100%;
     padding: 15px;
