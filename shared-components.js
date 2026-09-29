@@ -45,7 +45,7 @@ document.getElementById("footer-container").innerHTML = `
                 <a href="https://github.com/AnonimNEO" title="GitHub" target="_blank">🄯</a>
                 <a href="https://t.me/Links_NEO_Organization" title="Telegram" target="_blank">TG️</a>
                 <a href="https://www.youtube.com/channel/UCZvOEU_IDRsfK5j-JoNAVWg" title="Youtube Departament K" target="_blank">Y</a>
-                <a href="mailto:operawifi.mini.net.win.2000@gmail.com" title="Email">📧</a>
+                <a href="mailto:neo.organization.official@gmail.com" title="Email">📧</a>
             </div>
         </div>
     </footer>
