@@ -258,9 +258,16 @@ body.dark-theme .footer {
     margin: 0 auto;
 }
 
-.copyright {
+.copyleft {
     margin-bottom: 20px;
     font-size: calc(var(--font-size) * 0.89);
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 .social-links a {
@@ -274,25 +281,6 @@ body.dark-theme .footer {
     transition: all 0.3s;
     font-weight: bold;
     font-size: var(--font-size);
-}
-
-.social-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 15%;
-    text-decoration: none;
-    transition: all 0.3s;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-body.light-theme .social-links a {
-    background-color: #e0e0e0;
-    color: #000;
-    border: 2px solid #000;
 }
 
 body.dark-theme .social-links a {
