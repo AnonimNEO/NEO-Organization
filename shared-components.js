@@ -10,7 +10,8 @@ function loadSettings() {
     return {
         theme: getCookie("theme") || "light",
         fontSize: parseInt(getCookie("fontSize") || "18"),
-        fontFamily: getCookie("fontFamily") || "NimbusMonoPS"
+        fontFamily: getCookie("fontFamily") || "NimbusMonoPS",
+        autoScale: getCookie("autoScale") !== "false"
     };
 }
 
@@ -18,12 +19,20 @@ function saveSettings(settings) {
     setCookie("theme", settings.theme);
     setCookie("fontSize", settings.fontSize);
     setCookie("fontFamily", settings.fontFamily);
+    setCookie("autoScale", settings.autoScale);
+}
+
+function calculateAutoFontSize() {
+    return Math.max(18, Math.min(72, Math.floor(window.innerWidth / 85)));
 }
 
 function applySettings(settings) {
-    document.documentElement.style.setProperty("--font-size", settings.fontSize + "px");
+    const fontSize = settings.autoScale ? calculateAutoFontSize() : settings.fontSize;
+    document.documentElement.style.setProperty("--font-size", fontSize + "px");
     document.body.className = settings.theme + "-theme";
     document.body.style.fontFamily = `"${settings.fontFamily}", serif`;
+    document.getElementById("font-size-value").textContent = fontSize;
+    document.getElementById("font-size-slider").value = fontSize;
 }
 
 function loadNavbar(logoPath, indexPath) {
@@ -47,8 +56,14 @@ function loadNavbar(logoPath, indexPath) {
                             </select>
                         </div>
                         <div class="setting-item">
-                            <label>Размер шрифта: <span id="font-size-value">${settings.fontSize}</span>px</label>
-                            <input type="range" id="font-size-slider" min="4" max="72" value="${settings.fontSize}" onchange="changeSetting('fontSize', this.value)">
+                            <label>Размер шрифта: <span id="font-size-value">${settings.autoScale ? calculateAutoFontSize() : settings.fontSize}</span>px</label>
+                            <input type="range" id="font-size-slider" min="12" max="72" value="${settings.autoScale ? calculateAutoFontSize() : settings.fontSize}" onchange="changeSetting('fontSize', this.value)" ${settings.autoScale ? "disabled" : ""}>
+                        </div>
+                        <div class="setting-item">
+                            <label>
+                                <input type="checkbox" id="auto-scale-checkbox" ${settings.autoScale ? "checked" : ""} onchange="changeSetting('autoScale', this.checked)">
+                                Авто масштаб
+                            </label>
                         </div>
                         <div class="setting-item">
                             <label>Шрифт:</label>
@@ -81,20 +96,28 @@ function changeSetting(type, value) {
 
     if (type === "fontSize") {
         settings.fontSize = parseInt(value);
-        document.getElementById("font-size-value").textContent = value;
     } else if (type === "theme") {
         settings.theme = value;
-        document.getElementById("theme-select").value = value;
     } else if (type === "fontFamily") {
         settings.fontFamily = value;
-        document.getElementById("font-family-select").value = value;
+    } else if (type === "autoScale") {
+        settings.autoScale = value;
+        document.getElementById("font-size-slider").disabled = value;
     }
 
     saveSettings(settings);
     applySettings(settings);
 }
 
-// Нижний колонтитул
+let resizeTimeout;
+window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        const settings = loadSettings();
+        if (settings.autoScale) applySettings(settings);
+    }, 250);
+});
+
 document.getElementById("footer-container").innerHTML = `
     <footer class="footer">
         <div class="footer-content">
