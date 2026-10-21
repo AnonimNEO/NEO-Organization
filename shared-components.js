@@ -124,6 +124,7 @@ document.getElementById("footer-container").innerHTML = `
             <div class="copyleft">Copyleft NEO Organization 🄯 2022 - 2026 (NEON Life, Mini Life и operawifi.mini.net.win - являются неактуальными названиями.)</div>
             <div class="social-links">
                 <a href="https://github.com/AnonimNEO" title="GitHub" target="_blank">🄯</a>
+                <a href="https://codeberg./AnonimNEO" title="Codeberg" target="_blank">🄯</a>
                 <a href="https://t.me/Links_NEO_Organization" title="Telegram" target="_blank">TG️</a>
                 <a href="https://www.youtube.com/channel/UCZvOEU_IDRsfK5j-JoNAVWg" title="Youtube Departament K" target="_blank">Y</a>
                 <a href="mailto:neo.organization.official@gmail.com" title="Email">📧</a>
